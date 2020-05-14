@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams, HttpResponse, HttpHeaderResponse, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpParams, HttpResponse, HttpHeaderResponse, HttpHeaders  } from "@angular/common/http";
+
 import { Observable } from 'rxjs';
 
 @Injectable()
@@ -12,7 +13,7 @@ export class ApiService {
     return this._httpClient.get(this.baseUrl+endPointURL);
   }
 
-  getByID(bookID: number, endPointURL: string){
-    return this._httpClient.get(this.baseUrl+endPointURL+"/"+bookID);
-  }
+  // getByID(bookID: number, endPointURL: string){
+  //   return this._httpClient.get(this.baseUrl+endPointURL+"/"+bookID);
+  // }
 }

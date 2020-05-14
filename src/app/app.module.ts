@@ -5,17 +5,30 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './components/shared/shared.module';
 import { ApiService } from './services/api.service';
+import { CarsComponent } from './components/cars-components/cars/cars.component';
+import { ListCarsComponent } from './components/cars-components/list-cars/list-cars.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CarsService } from './services/cars.service';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CarsComponent,
+    ListCarsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule,
+    RouterModule,
+
   ],
-  providers: [ApiService],
+  exports: [
+    ListCarsComponent
+  ],
+  providers: [ApiService, CarsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

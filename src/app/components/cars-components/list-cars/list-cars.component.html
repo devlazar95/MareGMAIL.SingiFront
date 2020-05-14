@@ -1,0 +1,23 @@
+<div class="card-group mt-5">
+    <div class="card-deck card-columns col-auto mb-5" style="width: 25em" *ngFor="let car of allCars">
+        <div class="container-fluid">
+            <div class="card border-white" >
+                <div class="card">
+                    <img class="card-img-top" src="../../../../assets/images/other/truck.jfif" alt="Card image cap">
+                    <div class="card-header bg-white text-header">
+                        <h5 class="card-title text-secondary text-center book-title" >{{car.name}}</h5>
+                      </div>
+                    <div class="card-body  bg-white">
+                        <p class="card-text">Broj motora: <span class="text-secondary"> {{car.engineNumber}}</span></p>
+                        <p class="card-text">Godište: <span class="text-secondary">{{car.year}}</span> </p>
+                        <p class="card-text">Boja: <span class="text-secondary"> {{car.color}}</span></p>
+                        <p class="card-text">Cena: <span class="text-secondary"> {{car.price}} &euro;</span></p>
+                    </div>
+                    <div class="card-footer bg-dark text-light">
+                        <button type="button" class="btn btn-outline-light" (click)="showMore(car.id)">Prikaži više</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
