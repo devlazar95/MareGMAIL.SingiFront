@@ -10,12 +10,14 @@ import { ListCarsComponent } from './components/cars-components/list-cars/list-c
 import { HttpClientModule } from '@angular/common/http';
 import { CarsService } from './services/cars.service';
 import { RouterModule } from '@angular/router';
+import { CarDetailComponent } from './components/car-detail/car-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarsComponent,
-    ListCarsComponent
+    ListCarsComponent,
+    CarDetailComponent
   ],
   imports: [
     BrowserModule,

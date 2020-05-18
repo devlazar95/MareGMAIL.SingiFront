@@ -1,9 +1,12 @@
+<div *ngIf="loader" class="loader-class">
+    <div class="reverse-spinner"></div>
+</div>
 <div class="card-group mt-5">
     <div class="card-deck card-columns col-auto mb-5" style="width: 25em" *ngFor="let car of allCars">
         <div class="container-fluid">
             <div class="card border-white" >
-                <div class="card">
-                    <img class="card-img-top" src="../../../../assets/images/other/truck.jfif" alt="Card image cap">
+                <div class="card hover-effect">
+                    <img class="card-img-top" src="../../../../assets/images/other/img-{{car.id}}.png" alt="Card image cap">
                     <div class="card-header bg-white text-header">
                         <h5 class="card-title text-secondary text-center book-title" >{{car.name}}</h5>
                       </div>

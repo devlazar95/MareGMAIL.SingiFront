@@ -12,4 +12,7 @@ export class CarsService {
         return this._apiService.get('shop/cars');
     }
 
+    getCarByID(carID:number): Observable<any>{
+        return this._apiService.getByID(carID, 'shop/cars');
+    }
 }

@@ -13,7 +13,7 @@ export class ApiService {
     return this._httpClient.get(this.baseUrl+endPointURL);
   }
 
-  // getByID(bookID: number, endPointURL: string){
-  //   return this._httpClient.get(this.baseUrl+endPointURL+"/"+bookID);
-  // }
+  getByID(carID: number, endPointURL: string){
+    return this._httpClient.get(this.baseUrl+endPointURL+"/"+carID);
+  }
 }
