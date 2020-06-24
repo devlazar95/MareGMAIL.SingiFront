@@ -6,14 +6,14 @@
   
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Početna <span class="sr-only">(current)</span></a>
+        <li class="nav-item ">
+          <a class="nav-link" [routerLinkActiveOptions]="{ exact: true }"  [routerLinkActive]="['active-link']" [routerLink]="['/']">Početna</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Automobili</a>
+          <a class="nav-link" [routerLinkActiveOptions]="{ exact: true }" [routerLinkActive]="['active-link']" [routerLink]="['/cars']">Automobili</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">O nama</a>
+            <a class="nav-link" [routerLinkActiveOptions]="{ exact: true }" [routerLinkActive]="['active-link']" [routerLink]="['/owners']">Vlasnici</a>
         </li>
       </ul>
     </div>

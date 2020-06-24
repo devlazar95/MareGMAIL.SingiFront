@@ -13,7 +13,15 @@ export class ApiService {
     return this._httpClient.get(this.baseUrl+endPointURL);
   }
 
+  post(endPointURL:string, ownerBody: any): Observable<any>{
+    return this._httpClient.post(this.baseUrl+endPointURL, ownerBody);
+  }
+
   getByID(carID: number, endPointURL: string){
     return this._httpClient.get(this.baseUrl+endPointURL+"/"+carID);
+  }
+
+  delete(carID: number, endPointURL: string){
+    return this._httpClient.delete(this.baseUrl+endPointURL+"/"+carID);
   }
 }

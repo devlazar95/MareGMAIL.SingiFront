@@ -18,6 +18,7 @@
                     </div>
                     <div class="card-footer bg-dark text-light">
                         <button type="button" class="btn btn-outline-light" (click)="showMore(car.id)">Prikaži više</button>
+                        <button type="button" *ngIf="showDeleteButton" class="btn btn-danger ml-3" (click)="deleteCar(car.id)">Izbriši</button>
                     </div>
                 </div>
             </div>

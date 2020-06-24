@@ -1,0 +1,28 @@
+<form [formGroup]="newOwner">
+    <div class="form-group">
+        <div class="d-flex flex-column">
+            <div class='d-flex flex-column'>
+                <label class="text-secondary">Ime vlasnika<span class="text-danger">*</span></label>
+                <input type="text" class="form-control form-control-sm"
+                [ngClass]="{'border-danger': formInvalid || uniqueFlightNumber}"
+                formControlName="ownerName"
+                required>
+            </div>
+            <div class='d-flex flex-column mt-2'>
+                <label class="text-secondary">Prezime vlasnika<span class="text-danger">*</span></label>
+                <input type="text" class="form-control form-control-sm"
+                [ngClass]="{'border-danger': formInvalid || uniqueFlightNumber}"
+                formControlName="ownerLastName"
+                required>
+            </div>
+            <div class='d-flex flex-column mt-2'>
+                <label class="text-secondary">Grad<span class="text-danger">*</span></label>
+                <input type="text" class="form-control form-control-sm"
+                [ngClass]="{'border-danger': formInvalid || uniqueFlightNumber}"
+                formControlName="ownerCity"
+                required>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-info btn-lg" (click)="sendOwnerData()">Dodaj</button>
+</form>

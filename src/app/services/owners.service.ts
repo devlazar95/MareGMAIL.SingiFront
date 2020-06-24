@@ -4,19 +4,19 @@ import { Observable } from 'rxjs';
 import { ApiService } from './api.service';
 
 @Injectable()
-export class CarsService {
+export class OwnersService {
     
     constructor(private _apiService: ApiService, private readonly _httpClient: HttpClient){}
 
     getAll(): Observable<any>{
-        return this._apiService.get('shop/cars');
+        return this._apiService.get('shop/owners');
     }
 
-    getCarByID(carID:number): Observable<any>{
-        return this._apiService.getByID(carID, 'shop/cars');
+    addNewOwner(ownerObject: any): Observable<any>{
+        return this._apiService.post('shop/owners/', ownerObject);
     }
-
-    deleteCar(carID: number): Observable<any>{
-        return this._apiService.delete(carID, 'shop/cars');
+    
+    deleteOwner(ownerID: number): Observable<any>{
+        return this._apiService.delete(ownerID, 'shop/owners');
     }
 }

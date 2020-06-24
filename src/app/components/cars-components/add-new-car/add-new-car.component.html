@@ -1,0 +1,91 @@
+<div class="min-height">
+    <div class="card w-50 mt-5 mx-auto p-3">
+        <div >
+            <form [formGroup]="newCar" class="needs-validation" autocomplete="off" class="d-flex flex-column">
+                <div class="d-flex flex-column">
+                    <label>Unesite jedinstveni broj motora automobila:</label>
+                    <input type="text" class="form-control form-control-sm"
+                                        [ngClass]="{'border-danger': formInvalid || uniqueFlightNumber}"
+                                        formControlName="carNumber"
+                                        aria-describedby="fnumberlHelp" required>
+                </div>
+                <div class="d-flex flex-column mt-3">
+                    <label>Unesite boju automobila:</label>
+                    <input type="text" class="form-control form-control-sm"
+                                        [ngClass]="{'border-danger': formInvalid || uniqueFlightNumber}"
+                                        formControlName="carColor"
+                                        aria-describedby="cColorHelp">
+                </div>
+                <div class="row mt-3">
+                    <div class="d-flex flex-column col-6">
+                        <label>Unesite godinu proizvodnje:</label>
+                        <input type="text" class="form-control form-control-sm"
+                                            [ngClass]="{'border-danger': formInvalid || uniqueFlightNumber}"
+                                            formControlName="carYear"
+                                            aria-describedby="cColorHelp">
+                    </div>
+                    <div class="d-flex flex-column col-6">
+                        <label>Unesite naziv automobila:</label>
+                        <input type="text" class="form-control form-control-sm"
+                                            [ngClass]="{'border-danger': formInvalid || uniqueFlightNumber}"
+                                            formControlName="carName"
+                                            aria-describedby="cColorHelp">
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="d-flex flex-column col-4">
+                        <label>Odaberite vrstu goriva:</label>
+                        <select class="form-control form-control-sm" formControlName="fuelSelect">
+                            <option *ngFor="let fuel of allFuels" value="fuel.id">
+                                {{fuel.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="d-flex flex-column col-4">
+                        <label>Odaberite kategoriju automobila:</label>
+                        <select class="form-control form-control-sm" formControlName="carCategory">
+                            <option *ngFor="let cat of allCategories" value="cat.id">
+                                {{cat.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="d-flex flex-column col-4">
+                        <label>Odaberite proizvođača automobila:</label>
+                        <select class="form-control form-control-sm" formControlName="carManufacturer">
+                            <option *ngFor="let man of allManufacturers" value="man.id">
+                                {{man.name}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="d-flex flex-column col-5">
+                        <label>Odaberite postojećeg vlasnika u bazi:</label>
+                        <select class="form-control form-control-sm" formControlName="carOwner">
+                            <option *ngFor="let ow of allOwners" value="ow.id">
+                                {{ow.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-2 d-flex align-items-end justify-content-center">
+                        <h5 class="text-secondary">- ILI -</h5>
+                    </div>
+                    <div class="col-5 d-flex align-items-end justify-content-center">
+                        <ng-template #content let-modal>
+                            <div class="modal-header bg-dark text-light">
+                              <h4 class="modal-title" id="modal-basic-title">Novi Vlasnik</h4>
+                              <button type="button" class="close" aria-label="Close" style="color: white;" (click)="modal.dismiss('Cross click')">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                                <add-new-owner-popup></add-new-owner-popup>
+                            </div>
+                          </ng-template>
+                        <button type="lead button" class="btn btn-dark btn-lg" (click)="addNewOwner(content)">Dodajte novog vlasnika</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
